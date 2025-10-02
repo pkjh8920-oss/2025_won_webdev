@@ -9,32 +9,33 @@
     <h1> Radio Button Example</h1>
 
     <h2>과일</h2>
-    <div><input  type = "radio"  name ="group-1"    />사과</div>
-    <div><input type = "radio"  name ="group-1"     />바나나</div>
-    <div><input type = "radio"  name ="group-1"     />오렌지</div>
+    <div><input  type = "radio"  name ="group-1"  value="사과"   />사과</div>
+    <div><input type = "radio"  name ="group-1"   value ="바나나"  />바나나</div>
+    <div><input type = "radio"  name ="group-1"   value = "오렌지"  />오렌지</div>
 
     <h2>아이브</h2>
-    <div><input type = "radio"  name ="group-2"     />장원영</div>
-    <div><input type = "radio"  name ="group-2"     />안유진</div>  
-    <div><input type = "radio"  name ="group-2"     />이서</div>
-    <div><input type = "radio"  name ="group-2"     />레이</div>
+    <div><input type = "radio"  name ="group-2"  value = "장원영"    />장원영</div>
+    <div><input type = "radio"  name ="group-2"  value  = "안유진"/>안유진</div>  
+    <div><input type = "radio"  name ="group-2"  value  ="이서"  />이서</div>
+    <div><input type = "radio"  name ="group-2"  value   ="레이" />레이</div>
 
     <h2>아일릿</h2>
-    <div><input type = "radio"  name ="group-3"     />원희</div>
-    <div><input type = "radio"  name ="group-3"     />모카</div>
-    <div><input type = "radio"  name ="group-3"     />아로하</div>
-     <div><input type = "radio"  name ="group-3"    />민주</div>
+    <div><input type = "radio"  name ="group-3"   value   ="원희"/>원희</div>
+    <div><input type = "radio"  name ="group-3"   value  ="모카" />모카</div>
+    <div><input type = "radio"  name ="group-3"   value  = "아로하"/>아로하</div>
+     <div><input type = "radio"  name ="group-3"   value = "민주" />민주</div>
 
      <button id="btn-fruite">과일 선택</button>
+     <p id="txt-result"></p>
 
      <script>
         var btnfruite = document.getElementById("btn-fruite")
         var txtResult = document.getElementById("txt-result")
 
         btnfruite.addEventListener("click", () => {
-            var selectobj = document.querySelector("input(name='group-1'):checked")
+            var selectobj = document.querySelector("input[name='group-1']:checked")
             console.log(selectobj.valus)
-            txtResult.innerText = selectobj.value
+            txtResult.innerText = "선택 : " + selectobj.value
         })
 
      </script>
