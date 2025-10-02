@@ -10,24 +10,37 @@
 
     <h2>출발역</h2>
     <div>
-        <input type  = "radio" name = "group-1" /><lavel>서울</label>
-        <input type  = "radio" name = "group-1" /><lavel>천안</label>
-        <input type  = "radio" name = "group-1" /><lavel>세종</label>
-        <input type  = "radio" name = "group-1" /><lavel>익산</label>
+        <input type="radio" name="group-1" value="서울" /><label>서울</label>
+        <input type="radio" name="group-1" value="천안" /><label>천안</label>
+        <input type="radio" name="group-1" value="세종" /><label>세종</label>
+        <input type="radio" name="group-1" value="익산" /><label>익산</label>
     </div>
 
     <h2>도착역</h2>
     <div>
-        <select>
-            <option>광주</option>
-            <option>목포</option>
-            <option>여수</option>
+        <select id="arrival">
+            <option value="광주">광주</option>
+            <option value="목포">목포</option>
+            <option value="여수">여수</option>
         </select>
     </div>
 
-        <button>제출</button>
-        <p>결과 : </p>
+    <button id="submit-btn">제출</button>
+    <p>결과 : <span id="result"></span></p>
 
-        <script></script>
+    <script>
+        const submitBtn = document.getElementById("submit-btn");
+        const resultSpan = document.getElementById("result");
+        const arrivalSelect = document.getElementById("arrival");
+
+        submitBtn.addEventListener("click", () => {
+            const selectedDeparture = document.querySelector('input[name="group-1"]:checked');
+            const selectedArrival = arrivalSelect.value;
+
+            resultSpan.textContent = selectedDeparture 
+                ? `출발역: ${selectedDeparture.value}, 도착역: ${selectedArrival} 예약이 완료되었습니다.`
+                : `출발역을 선택해주세요.`;
+        });
+    </script>
 </body>
 </html>
